@@ -218,7 +218,8 @@
 					var parentFound = false;
 
 					while (angular.isDefined(target) && target !== null && !parentFound) {
-						if (!!target.className.split && contains(target.className.split(' '), 'multiselect-parent') && !parentFound) {
+						var $target = angular.element(target)
+						if ($target.hasClass('multiselect-parent') && !parentFound) {
 							if (target === $dropdownTrigger) {
 								parentFound = true;
 							}
